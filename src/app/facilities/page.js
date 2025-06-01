@@ -9,8 +9,8 @@ export default function FacilitiesPage() {
       <Card title="Facility Management">
         <p>Manage hospital rooms, equipment, and other physical resources.</p>
         <div className={styles.buttonGroup}>
-          <Link href="/facilities/rooms" passHref legacyBehavior><Button variant="primary">Manage Rooms</Button></Link>
-          {/* <Link href="/facilities/equipment" passHref><Button>Manage Equipment</Button></Link> */}
+          <Link href="/facilities/view-rooms" passHref legacyBehavior><Button variant="primary">View & Manage Rooms</Button></Link>
+          <Link href="/facilities/add-room" passHref legacyBehavior><Button variant="secondary">Add New Room</Button></Link>
         </div>
       </Card>
     </div>

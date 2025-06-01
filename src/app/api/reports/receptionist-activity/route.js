@@ -16,7 +16,7 @@ export async function GET(request) {
     `);
     const totalReceptionists = totalReceptionistsRows[0].totalReceptionists;
 
-    // Query to get receptionists by department (assuming receptionists are assigned to departments like other staff)
+    // Query to get receptionists by department (assuming receptionists are assigned to departments like other employee)
     const [departmentRows] = await connection.execute(`
       SELECT d.name AS department_name, COUNT(e.employee_id) AS count
       FROM employee e

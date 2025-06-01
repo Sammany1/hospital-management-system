@@ -39,11 +39,11 @@ export default function AddPatientPage() {
         break;
       case 'email':
         if (!value) error = 'Email is required.';
-        else if (value && !/\\S+@\\S+\\.\\S+/.test(value)) error = 'Email is invalid.';
+        else if (value && !/\S+@\S+\.\S+/.test(value)) error = 'Email is invalid.';
         break;
       case 'phoneNumber':
         if (!value) error = 'Phone number is required.';
-        else if (value && !/^[0-9\\s\\-\\(\\)]+$/.test(value)) error = 'Phone number is invalid.';
+        else if (value && !/^[0-9\s\-\(\)]+$/.test(value)) error = 'Phone number is invalid.';
         break;
       case 'dateOfBirth':
         if (!value) error = 'Date of birth is required.';

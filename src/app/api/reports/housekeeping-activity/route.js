@@ -10,14 +10,14 @@ export async function GET(request) {
     connection = await pool.getConnection();
     console.log("Successfully connected to the database for housekeeping activity report.");
 
-    // Query to get total number of housekeeping staff
-    const [totalStaffRows] = await connection.execute(`
-      SELECT COUNT(*) AS totalHousekeepingStaff FROM employee WHERE employee_type = 'Housekeeping'
+    // Query to get total number of housekeeping employee
+    const [totalEmployeeRows] = await connection.execute(`
+      SELECT COUNT(*) AS totalHousekeepingEmployee FROM employee WHERE employee_type = 'Housekeeping'
     `);
-    const totalHousekeepingStaff = totalStaffRows[0].totalHousekeepingStaff;
+    const totalHousekeepingEmployee = totalEmployeeRows[0].totalHousekeepingEmployee;
 
-    // Query to get housekeeping staff by assigned area (example)
-    // This assumes a table 'employee_area_assigned' links housekeeping staff to areas
+    // Query to get housekeeping employee by assigned area (example)
+    // This assumes a table 'employee_area_assigned' links housekeeping employee to areas
     const [areaAssignmentRows] = await connection.execute(`
       SELECT eaa.area_assigned, COUNT(eaa.HK_employee_id) AS count
       FROM employee_area_assigned eaa
@@ -49,7 +49,7 @@ export async function GET(request) {
 
 
     const reportData = {
-      totalHousekeepingStaff,
+      totalHousekeepingEmployee,
       areaAssignments,
       tasksCompletedToday, // Example data point
       averageCleaningTime, // Example data point

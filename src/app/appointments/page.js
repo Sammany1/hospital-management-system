@@ -9,13 +9,13 @@ export default function AppointmentsPage() {
       <Card title="Appointment Management">
         <p>Schedule, view, and manage patient appointments.</p>
         <div className={styles.buttonGroup}>
-          <Link href="/appointments/schedule" passHref legacyBehavior>
+          <Link href="/appointments/schedule">
             <Button variant="primary">Schedule New Appointment</Button>
           </Link>
-          <Link href="/appointments/view" passHref legacyBehavior>
+          <Link href="/appointments/view">
             <Button variant="secondary">View Appointments</Button>
           </Link>
-          <Link href="/appointments/reports" passHref legacyBehavior>
+          <Link href="/appointments/reports">
             <Button variant="secondary">Appointment Reports</Button>
           </Link>
         </div>

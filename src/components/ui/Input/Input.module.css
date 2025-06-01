@@ -1,9 +1,32 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem; /* Add some space between input groups */
+}
+
+.label {
+  margin-bottom: 0.5rem; /* Space between label and input */
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
 .input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 1rem;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.required {
+  color: red;
+  margin-left: 0.25rem;
 }

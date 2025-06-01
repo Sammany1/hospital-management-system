@@ -62,8 +62,6 @@ export async function POST(request) {
       const [result] = await connection.execute(query, values);
       const newAppointmentId = result.insertId;
 
-      connection.release();
-
       if (newAppointmentId) {
         return NextResponse.json({ message: 'Appointment scheduled successfully', appointment_id: newAppointmentId }, { status: 201 });
       } else {
@@ -71,7 +69,6 @@ export async function POST(request) {
       }
 
     } catch (dbError) {
-      if (connection) connection.release();
       console.error('Database Error scheduling appointment:', dbError);
       // Check for foreign key constraint errors specifically
       if (dbError.code === 'ER_NO_REFERENCED_ROW_2') {

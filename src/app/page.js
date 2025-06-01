@@ -75,7 +75,7 @@ export default function HomePage() {
       <main className={styles.mainContent}>
         <Card title="Welcome to HOSYS" className={styles.welcomeCard}>
           <p className={styles.welcomeText}>
-            Your central hub for managing patient care, staff, appointments, and
+            Your central hub for managing patient care, employee, appointments, and
             critical hospital operations efficiently.
           </p>
           <p className={styles.welcomeSubtext}>

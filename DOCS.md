@@ -82,7 +82,7 @@ This document lists all tables and their columns in database `sql12781999`, incl
 | T_employee_id| int       | NO       | PRI |       |
 | tech_area    | varchar   | NO       | PRI |       |
 
-## housekeeping_staff
+## housekeeping_employee
 | Column Name    | Data Type | Nullable | Key | Extra |
 |----------------|-----------|----------|-----|-------|
 | HK_employee_id | int       | NO       | PRI |       |

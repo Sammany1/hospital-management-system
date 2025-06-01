@@ -1,9 +1,9 @@
 // filepath: /Users/alsammany/Documents/Personal/SPRING 25/Database/Project/GUI/hospital/src/app/api/departments/route.js
 import { NextResponse } from 'next/server';
-import pool from '@/utils/db';
-import dbSemaphore from '@/utils/db-semaphore';
+import pool from '../../../utils/db'; // Corrected path
+import dbSemaphore from '../../../utils/db-semaphore'; // Corrected path
 
-export async function GET(req) {
+export async function GET(request) {
   await dbSemaphore.acquire();
   let connection;
   try {

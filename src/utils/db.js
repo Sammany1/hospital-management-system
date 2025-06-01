@@ -9,7 +9,7 @@ const pool = mysql.createPool({
   database: process.env.DB_DATABASE || 'sql12781999',
   port: process.env.DB_PORT || 3306,
   waitForConnections: true,
-  connectionLimit: 10, // Increased from 1
+  connectionLimit: 1, // Adjusted to match MAX_DB_CONNECTIONS from db-semaphore.js
   queueLimit: 0,
   connectTimeout: 20000, // Added a longer timeout
   acquireTimeout: 20000, // Added a longer timeout

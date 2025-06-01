@@ -7,7 +7,11 @@ export async function GET(request) {
   let connection;
   try {
     connection = await pool.getConnection();
-    // ...existing code for GET
+    const [rows] = await connection.query('SELECT treatment_id, name, description, cost, category, specilization_required, treatment_minutes FROM treatment ORDER BY name ASC');
+    return NextResponse.json(rows);
+  } catch (error) {
+    console.error('API Error fetching treatment definitions:', error);
+    return NextResponse.json({ message: 'Failed to fetch treatment definitions', error: error.message }, { status: 500 });
   } finally {
     if (connection) connection.release();
     dbSemaphore.release();
@@ -51,7 +55,7 @@ export async function POST(request) {
     const values = [
       name,
       description || null,
-      cost ? parseFloat(cost) : null,
+      (cost !== null && cost !== undefined) ? parseFloat(cost) : null,
       category || null,
       specilization_required || null,
       treatment_minutes ? parseInt(treatment_minutes) : null,

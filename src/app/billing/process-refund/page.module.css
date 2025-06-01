@@ -1,1 +1,35 @@
-.container { padding: 20px; } .form { display: flex; flex-direction: column; gap: 15px; }
+/* Styles for Process Refund Page */
+.container {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 60px); /* Adjust based on your layout */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .errorText {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .successText {
+    color: #5cb85c;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form button[type="submit"] {
+    margin-top: 1rem;
+  }

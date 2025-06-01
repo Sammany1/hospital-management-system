@@ -1,0 +1,310 @@
+/* Styles for Manage Hospital Rooms page (shared by add-room and view-rooms) */
+.container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styles (for add-room) */
+.formCard {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formActions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* List Styles (for view-rooms) */
+.listCard {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.listTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.topControlsContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.addRoomButton {
+  /* Styles for the Add New Room button on the view page */
+}
+
+.filtersContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filterInput,
+.filterSelect {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  min-width: 150px;
+}
+
+.filterButton,
+.clearButton {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+.filterButton {
+  background-color: #3b82f6;
+  color: white;
+}
+.filterButton:hover {
+  background-color: #2563eb;
+}
+
+.clearButton {
+  background-color: #6b7280;
+  color: white;
+}
+.clearButton:hover {
+  background-color: #4b5563;
+}
+
+.listInfoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.limitSelect {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.roomsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border: 1px solid #e5e7eb;
+}
+
+.roomsTable th,
+.roomsTable td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+}
+
+.roomsTable th:last-child,
+.roomsTable td:last-child {
+  border-right: none;
+}
+
+.roomsTable th {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.tableHeaderSortable {
+  cursor: pointer;
+}
+.tableHeaderSortable:hover {
+  background-color: #e5e7eb;
+}
+
+.actionsHeader {
+  /* Specific styles for actions column header if needed */
+}
+
+.roomsTable td {
+  color: #111827;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem; /* Space between edit/delete buttons */
+}
+
+.actionButtons button, /* General style for action buttons */
+.smallButton {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #3b82f6;
+  color: white;
+}
+.editButton:hover {
+  background-color: #2563eb;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+  color: white;
+}
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.cancelButton, .clearButton /* For form */ {
+    background-color: #6b7280;
+    color: white;
+}
+.cancelButton:hover, .clearButton:hover {
+    background-color: #4b5563;
+}
+
+
+.paginationControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.paginationControls button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.paginationControls button:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.paginationControls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationControls span {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Utility Styles */
+.loading, .errorText, .successText, .noResults {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+}
+
+.errorText {
+  color: #ef4444;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+}
+
+.successText {
+  color: #065f46; /* Tailwind green-800 */
+  background-color: #d1fae5; /* Tailwind green-100 */
+  border: 1px solid #6ee7b7; /* Tailwind green-300 */
+}
+
+.noResults {
+  /* Style for no results message if different from loading */
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.errorMessageText {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterInput, .filterSelect, .filterButton, .clearButton {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .paginationControls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .listInfoContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
