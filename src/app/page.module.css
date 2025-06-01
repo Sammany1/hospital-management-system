@@ -1,0 +1,152 @@
+/* filepath: /Users/alsammany/Documents/Personal/SPRING 25/Database/Project/GUI/hospital/src/app/page.module.css */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100vh; */ /* min-height might be handled by Layout now */
+  background-color: #f4f7f6; /* Light, calming background */
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 30px 40px;
+}
+
+.welcomeCard {
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  border-left: 5px solid #007bff;
+}
+
+.welcomeText {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.welcomeSubtext {
+  font-size: 1rem;
+  color: #555;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+}
+
+.quickActions,
+.systemStats {
+  margin-bottom: 30px;
+}
+
+.actionsGrid,
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.actionCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the link takes up the card space for clicking */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.actionCardLink:hover .actionCard {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.actionCard {
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%; /* Make cards in a row equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.actionCard p {
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.actionButton {
+  align-self: flex-start; /* Aligns button to the start of the flex container */
+  /* Add more specific button styling if needed, or rely on global Button component styles */
+}
+
+.statCard {
+  background-color: #e9f5ff; /* Light blue for stats */
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.statValue {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0056b3; /* Darker blue for stat values */
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #343a40; /* Dark footer */
+  color: #f8f9fa;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.dbStatus {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative; /* For tooltip positioning */
+}
+
+.dbOnline {
+  background-color: #28a745; /* Green for online */
+  color: white;
+}
+
+.dbOffline {
+  background-color: #dc3545; /* Red for offline */
+  color: white;
+}
+
+.dbStatusTooltip {
+  visibility: hidden;
+  width: 220px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the status text */
+  left: 50%;
+  margin-left: -110px; /* Use half of the width to center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+  white-space: pre-wrap; /* Allows newlines in tooltip */
+}
+
+.dbStatus:hover .dbStatusTooltip {
+  visibility: visible;
+  opacity: 1;
+}

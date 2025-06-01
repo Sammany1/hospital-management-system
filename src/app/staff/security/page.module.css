@@ -1,0 +1,52 @@
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.optionCard {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+}
+
+.optionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.optionCard h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+.optionCard p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}

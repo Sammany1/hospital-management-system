@@ -1,0 +1,40 @@
+.container {
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.875em;
+  margin-top: -0.25rem; /* Adjust as needed */
+  margin-bottom: 0.5rem; /* Adjust as needed */
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between label, input, and error message */
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Ensure select also takes full width if desired */
+select.input {
+ width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: white; /* Ensure select background is white */
+}

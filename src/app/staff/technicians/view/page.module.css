@@ -1,0 +1,42 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.searchInput {
+  flex: 1;
+}
+
+.searchButton {
+  min-width: 120px;
+}
+
+.errorText {
+  color: #c00;
+  margin-top: 1rem;
+}
+
+.detailsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.detailsTable th,
+.detailsTable td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.detailsTable th {
+  background: #f5f5f5;
+  font-weight: 600;
+}

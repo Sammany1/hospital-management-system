@@ -1,102 +1,173 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { Card, Button } from "../components/ui";
+import styles from "./page.module.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
+  // const [dbStatus, setDbStatus] = useState({ status: 'Checking...', message: '' }); // Moved to Navbar
+  const [activePatients, setActivePatients] = useState("N/A");
+  const [appointmentsToday, setAppointmentsToday] = useState("N/A");
+  const [availableDoctors, setAvailableDoctors] = useState("N/A");
+  // Placeholder for lab results until API is ready
+  const [pendingLabResults, setPendingLabResults] = useState("12");
+
+  useEffect(() => {
+    // Fetch Database Status - Moved to Navbar
+    // fetch(\'/api/stats/database-status\')
+    //   .then(res => res.json())
+    //   .then(data => setDbStatus(data))
+    //   .catch(() => setDbStatus({ status: \'Offline\', message: \'Failed to connect to status API.\' }));
+
+    // Fetch Active Patients
+    fetch("/api/stats/active-patients")
+      .then((res) => res.json())
+      .then((data) => setActivePatients(data.activePatients.toString()))
+      .catch(() => setActivePatients("Error"));
+
+    // Fetch Appointments Today
+    fetch("/api/stats/appointments-today")
+      .then((res) => res.json())
+      .then((data) => setAppointmentsToday(data.appointmentsToday.toString()))
+      .catch(() => setAppointmentsToday("Error"));
+
+    // Fetch Available Doctors
+    fetch("/api/stats/available-doctors")
+      .then((res) => res.json())
+      .then((data) => setAvailableDoctors(data.availableDoctors.toString()))
+      .catch(() => setAvailableDoctors("Error"));
+
+    // TODO: Fetch Pending Lab Results when API is available
+    // fetch(\'/api/stats/pending-lab-results\')
+    //   .then(res => res.json())
+    //   .then(data => setPendingLabResults(data.pendingLabResults.toString()))
+    //   .catch(() => setPendingLabResults(\'Error\'));
+
+  }, []);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className={styles.dashboardContainer}>
+      {/* Header section removed, as Navbar is now part of the global Layout */}
+      {/* <header className={styles.header}>
+        <div className={styles.headerLeft}>
+          <Image
+            src="/hospital-logo.svg"
+            alt="Hospital Logo"
+            width={150}
+            height={50}
+            priority
+            className={styles.logo}
+          />
+          <h1 className={styles.title}>Hospital Management System</h1>
         </div>
+        <div className={styles.headerRight}>
+          <div className={`${styles.dbStatus} ${dbStatus.status === \'Online\' ? styles.dbOnline : styles.dbOffline}`}>
+            DB: {dbStatus.status}
+            {dbStatus.status === \'Offline\' && dbStatus.message && (
+              <span className={styles.dbStatusTooltip}>{dbStatus.message} {dbStatus.errorDetails?.code ? `(${dbStatus.errorDetails.code})` : \'\'}</span>
+            )}
+          </div>
+        </div>
+      </header> */}
+
+      <main className={styles.mainContent}>
+        <Card title="Welcome to HOSYS" className={styles.welcomeCard}>
+          <p className={styles.welcomeText}>
+            Your central hub for managing patient care, staff, appointments, and
+            critical hospital operations efficiently.
+          </p>
+          <p className={styles.welcomeSubtext}>
+            Navigate through the system using the sidebar to access different
+            modules.
+          </p>
+        </Card>
+
+        <section className={styles.quickActions}>
+          <h2 className={styles.sectionTitle}>Quick Actions</h2>
+          <div className={styles.actionsGrid}>
+            <Link href="/patients/add" passHref legacyBehavior>
+              <a className={styles.actionCardLink}>
+                <Card title="Add New Patient" className={styles.actionCard}>
+                  <p>Register a new patient into the system.</p>
+                  <Button
+                    variant="primary"
+                    className={styles.actionButton}
+                  >
+                    Go to Add Patient
+                  </Button>
+                </Card>
+              </a>
+            </Link>
+            <Link href="/appointments/schedule" passHref legacyBehavior>
+              <a className={styles.actionCardLink}>
+                <Card title="Schedule Appointment" className={styles.actionCard}>
+                  <p>Book a new appointment for a patient.</p>
+                  <Button
+                    variant="primary"
+                    className={styles.actionButton}
+                  >
+                    Go to Schedule
+                  </Button>
+                </Card>
+              </a>
+            </Link>
+            <Link href="/patients/view" passHref legacyBehavior>
+              <a className={styles.actionCardLink}>
+                <Card title="View Patients" className={styles.actionCard}>
+                  <p>Search and view existing patient records.</p>
+                  <Button
+                    variant="secondary"
+                    className={styles.actionButton}
+                  >
+                    Go to View Patients
+                  </Button>
+                </Card>
+              </a>
+            </Link>
+            <Link href="/reports/daily-activity" passHref legacyBehavior>
+              <a className={styles.actionCardLink}>
+                <Card title="Daily Activity Report" className={styles.actionCard}>
+                  <p>View today's key statistics and activities.</p>
+                  <Button
+                    variant="secondary"
+                    className={styles.actionButton}
+                  >
+                    Go to Reports
+                  </Button>
+                </Card>
+              </a>
+            </Link>
+          </div>
+        </section>
+
+        <section className={styles.systemStats}>
+          <h2 className={styles.sectionTitle}>System Overview</h2>
+          <div className={styles.statsGrid}>
+            <Card title="Active Patients" className={styles.statCard}>
+              <p className={styles.statValue}>{activePatients}</p>
+            </Card>
+            <Card title="Appointments Today" className={styles.statCard}>
+              <p className={styles.statValue}>{appointmentsToday}</p>
+            </Card>
+            <Card title="Available Doctors" className={styles.statCard}>
+              <p className={styles.statValue}>{availableDoctors}</p>
+            </Card>
+            <Card title="Pending Lab Results" className={styles.statCard}>
+              <p className={styles.statValue}>{pendingLabResults}</p>
+              {/* Placeholder - Fetch dynamically later */}
+            </Card>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className={styles.footer}>
+        <p>
+          &copy; {new Date().getFullYear()} HOSYS - Hospital Management System.
+          All rights reserved.
+        </p>
+        <p>Version 1.0.0</p>
       </footer>
     </div>
   );

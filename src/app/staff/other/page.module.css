@@ -1,0 +1,49 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.mainTitle {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subTitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.optionCard {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 8px; /* Consistent rounded corners */
+}
+
+.optionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.optionCard h3 {
+    font-size: 1.5rem;
+    color: #007bff; /* Primary color for titles */
+    margin-bottom: 10px;
+}
+
+.optionCard p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}

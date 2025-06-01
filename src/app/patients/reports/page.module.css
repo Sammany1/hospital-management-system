@@ -1,0 +1,55 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.reportContent {
+    margin-top: 15px;
+}
+
+.reportSection {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sectionTitle {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.statList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.statListItem {
+    font-size: 1rem;
+    color: #555;
+    padding: 5px 0;
+}
+
+.statLabel {
+    font-weight: bold;
+    color: #444;
+}
+
+.errorText {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+}

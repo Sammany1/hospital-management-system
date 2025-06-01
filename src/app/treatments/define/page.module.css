@@ -1,0 +1,60 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9; /* Added a light background for the page */
+  border-radius: 8px; /* Optional: if you want the whole page container to be card-like */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Increased gap for better spacing */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333; /* Dark grey for labels */
+  font-size: 0.9rem; /* Slightly smaller label */
+}
+
+.required {
+  color: #d9534f; /* Bootstrap's danger color for required marks */
+  margin-left: 0.25rem;
+}
+
+/* Styles for Input and potentially a TextArea component if you create one */
+/* These will be complemented by the individual component styles from @/components/ui */
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  /* Uses Button component styles primarily, can add overrides here if needed */
+  margin-top: 1rem; /* Add some space above the button */
+}
+
+
+.error {
+  color: #D8000C; /* Standard error red */
+  background-color: #FFD2D2; /* Light red background */
+  border: 1px solid #D8000C;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #270; /* Dark green for success text */
+  background-color: #DFF2BF; /* Light green background */
+  border: 1px solid #270;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}

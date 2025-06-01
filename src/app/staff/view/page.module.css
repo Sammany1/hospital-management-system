@@ -1,0 +1,60 @@
+/* filepath: /Users/alsammany/Documents/Personal/SPRING 25/Database/Project/GUI/hospital/src/app/staff/view/page.module.css */
+.container {
+    padding: 20px;
+}
+
+.mainContent {
+    margin-left: 250px; /* Adjust if sidebar width changes */
+    padding: 20px;
+}
+
+.title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.searchInput,
+.roleFilter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.searchInput {
+    flex-grow: 1;
+}
+
+.staffTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.staffTable th,
+.staffTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top; /* Ensures content aligns well if it wraps */
+}
+
+.staffTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.staffTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.staffTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
