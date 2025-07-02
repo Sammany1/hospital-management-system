@@ -42,15 +42,6 @@ const Sidebar = () => {
         <Link href="/billing" className={styles.navLink}>
           Manage Billing
         </Link>
-
-        <h3 className={styles.sectionTitle}>Reports</h3>
-        <Link href="/reports" className={styles.navLink}>
-          View Reports
-        </Link>
-        <Link href="/reports/daily-activity" className={styles.navLink}>
-          Daily Activity
-        </Link>
-        {/* Add more report links here */}
       </nav>
     </aside>
   );

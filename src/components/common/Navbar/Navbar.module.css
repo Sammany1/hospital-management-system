@@ -48,7 +48,10 @@
 }
 
 .logoImage {
+  height: 50px;
+  width: 50px;
   margin-right: 10px;
+
   /* Adjust if specific styling for the image itself is needed */
 }
 

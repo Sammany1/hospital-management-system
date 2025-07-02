@@ -29,7 +29,7 @@ export default function AddEditRoomPage() {
         const response = await fetch('/api/departments');
         if (!response.ok) throw new Error('Failed to fetch departments');
         const data = await response.json();
-        setDepartments(data.departments || []);
+        setDepartments(data || []); // Corrected: API returns an array directly
       } catch (err) {
         console.error("Error fetching departments:", err);
         setFormError('Could not load departments for selection.');
