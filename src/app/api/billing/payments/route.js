@@ -1,4 +1,3 @@
-\
 import { NextResponse } from 'next/server';
 import { query } from '../../../../lib/db'; // Assuming your db utility is here
 
@@ -28,8 +27,7 @@ export async function POST(request) {
     const paymentStatus = status || 'Completed'; // Default status to 'Completed'
 
     const result = await query({
-      query: \`
-        INSERT INTO Payments (
+      query: `        INSERT INTO Payments (
           patient_id, 
           appointment_id, 
           amount, 
@@ -39,7 +37,7 @@ export async function POST(request) {
           status,
           processed_by_staff_id
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      \`,
+      `,
       values: [
         patientId,
         appointmentId || null,

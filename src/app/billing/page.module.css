@@ -1,73 +1,39 @@
 .container {
-  padding: 2rem;
-  background-color: #f4f7f6; /* Slightly softer background */
-  min-height: calc(100vh - 60px); /* Adjust if you have a fixed header */
+  padding: 20px;
 }
 
-.title {
-  font-size: 2.2rem; /* Adjusted size */
-  color: #2c3e50; /* Darker, more professional blue */
-  margin-bottom: 0.75rem;
+.buttonGroup {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 15px;
+}
+
+/* Remove styles that are no longer needed */
+/* 
+.mainTitle {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
   text-align: center;
-  font-weight: 600;
 }
 
-.description {
-  font-size: 1.05rem; /* Adjusted size */
-  color: #5a6570; /* Softer grey */
-  margin-bottom: 2rem; /* Adjusted spacing */
+.subTitle {
+  font-size: 1.2rem;
+  color: #666;
   text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 30px;
 }
 
-.cardsContainer {
+.optionsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger minmax */
-  gap: 1.5rem; /* Adjusted gap */
-  max-width: 1100px; /* Adjusted max-width */
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.navCard {
-  background-color: #ffffff;
-  border-radius: 10px; /* Slightly more rounded */
-  border: 1px solid #e0e0e0; /* Subtle border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
-  padding: 1.75rem; /* Adjusted padding */
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
+.optionCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Pushes button to bottom */
+  justify-content: space-between;
 }
-
-.navCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-}
-
-/* Assuming Card component renders title in a way that can be targeted, or pass titleClassName */
-.navCard h2, .navCard .cardTitle { 
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #0056b3; /* Darker blue for titles */
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-.navCard p {
-  font-size: 0.9rem; /* Adjusted size */
-  color: #4a5568; /* Slightly desaturated text color */
-  line-height: 1.5;
-  margin-bottom: 1.25rem; /* Adjusted spacing */
-  flex-grow: 1; /* Allows paragraph to take available space */
-}
-
-.navButton {
-  width: 100%;
-  padding: 0.65rem 1rem; /* Adjusted padding */
-  font-size: 0.95rem; /* Adjusted font size */
-  margin-top: auto; /* Pushes button to the bottom if card content is short */
-}
+*/

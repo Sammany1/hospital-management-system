@@ -1,0 +1,40 @@
+.container {
+    padding: 20px;
+}
+
+.filterForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.errorText {
+    color: red;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.paymentsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.paymentsTable th, .paymentsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.paymentsTable th {
+    background-color: #f2f2f2;
+}
+
+.paginationControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
