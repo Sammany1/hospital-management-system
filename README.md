@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Hospital Management System
+
+This project is a comprehensive Hospital Management System featuring:
+
+- **Database Design**: A robust relational database schema for hospital operations.
+- **Documentation**: Entity-Relationship Diagram (ERD) and sample data for easy setup and understanding.
+- **Modern Web GUI**: A user-friendly interface built with [Next.js](https://nextjs.org).
+
+---
+
+
+## Project Structure & Documentation
+
+- **Hospitals_Database_ERD.drawio**: The complete Entity-Relationship Diagram (ERD) for the hospital database, created with Draw.io. This file visually documents all entities, relationships, and key constraints in the system.
+- **Hospital_data.sql**: SQL file containing the full database schema and sample data. Use this to set up the database quickly in MySQL or compatible systems.
+- **/src/app/**: Contains the Next.js application source code for the graphical user interface (GUI).
+- **Live Database Connection**: The GUI is already connected to a live MySQL database instance hosted on a remote server. All data displayed and managed through the application reflects the actual database in real time.
+
+---
+
 
 ## Getting Started
 
-First, run the development server:
+### 1. Database Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Open `Hospitals_Database_ERD.drawio` in Draw.io or diagrams.net to review the database structure.
+2. Import `Hospital_data.sql` into your MySQL server to create all tables and insert sample data:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   mysql -u <username> -p < Hospital_data.sql
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. Running the GUI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to use the application.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Highlights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **ERD Documentation**: All entities, relationships, and constraints are clearly documented in `Hospitals_Database_ERD.drawio`.
+- **SQL Schema & Data**: The `Hospital_data.sql` file provides a ready-to-use schema and demo data for testing and development.
+- **Modern Web Interface**: The GUI is built with Next.js for a fast, responsive, and maintainable user experience.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Contributors
+
+This project was developed and maintained by:
+
+- **Abdelrahman Alsammny** (`sammany1`)
+- **Abdullah Yasser Ahmed** (`AbdullahYasserIsmail`)
+- **Amr Khaled Elnashar** (`Elnasharr`)
+
+---
+
+## Contributing & Feedback
+
+Contributions and feedback are welcome! Please open issues or submit pull requests for improvements.
