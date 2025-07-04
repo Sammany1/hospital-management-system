@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useId } from 'react';
 import styles from './Select.module.css';
 
 const Select = ({ label, name, id, value, onChange, required, placeholder, children, className }) => {
-  const selectId = id || (name ? `select-${name}-${Math.random().toString(36).substring(2, 9)}` : `select-${Math.random().toString(36).substring(2, 9)}`);
+  // Use React's useId hook for stable ID generation across server and client
+  const generatedId = useId();
+  const selectId = id || (name ? `select-${name}` : `select-${generatedId}`);
 
   return (
     <div className={styles.selectContainer}>

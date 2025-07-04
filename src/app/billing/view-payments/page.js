@@ -53,9 +53,9 @@ export default function ViewPaymentsPage() {
         throw new Error(errData.error || `HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      setPayments(data.payments);
-      setTotalPages(data.totalPages);
-      setTotalPayments(data.totalPayments);
+      setPayments(data.payments || []);
+      setTotalPages(data.totalPages || 1);
+      setTotalPayments(data.totalPayments || 0);
     } catch (err) {
       setError(err.message);
       setPayments([]);
@@ -116,23 +116,25 @@ export default function ViewPaymentsPage() {
                 <th>Amount</th>
                 <th>Payment Date</th>
                 <th>Method</th>
-                <th>Appointment ID</th>
+                <th>Status</th>
+                <th>Reference</th>
               </tr>
             </thead>
             <tbody>
-              {payments.length > 0 ? (
+              {payments && payments.length > 0 ? (
                 payments.map((payment) => (
                   <tr key={payment.payment_id}>
                     <td>{payment.patient_name}</td>
                     <td>{formatCurrency(payment.amount)}</td>
                     <td>{formatDate(payment.payment_date)}</td>
                     <td>{payment.payment_method}</td>
-                    <td>{payment.appointment_id || 'N/A'}</td>
+                    <td>{payment.payment_status}</td>
+                    <td>{payment.transaction_reference || 'N/A'}</td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan="5">No payments found.</td>
+                  <td colSpan="6">No payments found.</td>
                 </tr>
               )}
             </tbody>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useId } from 'react';
 import styles from './Input.module.css';
 
 const Input = ({ label, type = 'text', placeholder, value, onChange, name, required, className }) => {
-  // Generate a unique ID for the input to associate the label with it
-  const inputId = name ? `input-${name}-${Math.random().toString(36).substring(2, 9)}` : `input-${Math.random().toString(36).substring(2, 9)}`;
+  // Use React's useId hook for stable ID generation across server and client
+  const generatedId = useId();
+  const inputId = name ? `input-${name}` : `input-${generatedId}`;
 
   return (
     <div className={styles.inputContainer}>

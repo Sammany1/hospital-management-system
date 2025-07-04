@@ -240,9 +240,9 @@ export default function RecordPaymentPage() {
           >
             <option value="">Select Staff Member</option>
             {staff.map(member => (
-              // Assuming staff object has staff_id, first_name, last_name
-              <option key={member.staff_id} value={member.staff_id}>
-                {member.staff_id} - {member.first_name} {member.last_name}
+              // Using employee_id from employee API endpoint
+              <option key={member.employee_id} value={member.employee_id}>
+                {member.employee_id} - {member.first_name} {member.last_name}
               </option>
             ))}
           </Select>
